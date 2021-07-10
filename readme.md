@@ -1,4 +1,4 @@
-## Project Weather Journal App
+# Project Weather Journal App
 *Udacity Front End Web Developer Nanodegree Program*
 
 A simple app to get the weather temperature at a given zip code. The user can enter the zip code 
@@ -27,5 +27,6 @@ npm install body-parser
 npm install express
 ```
 
+Start your Node.js server:
 
-
+`node server.js`
