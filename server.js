@@ -9,16 +9,21 @@ const cors = require('cors');
 // Set up instance of Express app.
 const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json);
+app.use(bodyParser.json());
 app.use(cors());
 
 // Set path to static web content.
 app.use(express.static('website'));
 
+app.get('/all', function(req, res) {
+    console.log('Get request received.')
+    res.send('Get /all received.');
+})
+
+// Set up and start our server.
 const port = 3000;
+const server = app.listen(port, listening);
 
-
-
-
-
-
+function listening() {
+    console.log(`Server is listening on port ${server.address().port}`);
+}

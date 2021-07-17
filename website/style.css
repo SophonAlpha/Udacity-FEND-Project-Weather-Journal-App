@@ -1,0 +1,146 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: lightgray;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container--center {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.container--column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  flex-grow: 0;
+  flex-basis: auto;
+  padding: 0 40px;
+  background-color: wheat;
+}
+
+.input-form {
+  flex-grow: 0;
+  flex-basis: auto;
+  background-color: antiquewhite;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px 10px 20px;
+}
+
+.input-field__label {
+  padding-bottom: 10px;
+}
+
+.input-field__text {
+  padding: 10px;
+}
+
+.input-field__textarea {
+  padding: 10px;
+}
+
+.input-field__button-box {
+  padding: 10px 20px 10px 20px;
+}
+
+.input-field__button {
+  padding: 10px 30px 10px 30px;
+  font-size: 1em;
+}
+
+.error-msg {
+  color: red;
+}
+
+.error-msg--hidden {
+  display: none;
+}
+
+.journal {
+  flex-grow: 0;
+  flex-basis: auto;
+  overflow: auto;
+  background-color: antiquewhite;
+  padding: 10px 0 0 0;
+}
+
+.journal__header {
+  flex-grow: 0;
+  flex-basis: auto;
+  padding-left: 20px;
+}
+
+.journal__table {
+  flex-grow: 0;
+  flex-basis: auto;
+  overflow: auto;
+}
+
+.journal__table table {
+  border-collapse: collapse;
+}
+
+.journal__table thead th {
+  position: sticky;
+  top: 0;
+  height: 2em;
+  background-color: honeydew;
+  color: darkslategrey;
+  padding-left: 7px;
+}
+
+.journal__header-date {
+  min-width: 10em;
+  text-align: left;
+}
+
+.journal__header-zipcode {
+  min-width: 5em;
+  text-align: left;
+}
+
+.journal__header-weather {
+  min-width: 5em;
+  text-align: left;
+}
+
+.journal__header-notes {
+  min-width: 15em;
+  text-align: left;
+}
+
+.journal__odd-row {
+  background-color: white;
+}
+
+.journal__even-row {
+  background-color: whitesmoke;
+}
+
+.journal__table td {
+  text-align: left;
+  padding-left: 7px;
+  height: 1.8em;
+}
+
+.debug-border--red {
+  border: red 1px solid;
+}
+
+.debug-border--blue {
+  border: blue 1px solid;
+}
+
+.debug-border--green {
+  border: green 1px solid;
+}

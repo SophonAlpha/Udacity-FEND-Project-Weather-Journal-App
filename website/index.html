@@ -1,12 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <title>Weather Journal App</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Weather journal app project for Udacity Front End Web Developer Nanodegree Program.">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap"
+        rel="stylesheet">
+
+  <script src="app.js"></script>
+
 </head>
 <body>
 
-Hello!
+<div class="container--center">
+
+  <div class="container--column">
+
+    <div class="header">
+      <h1>Stefan's Weather Journal</h1>
+    </div>
+
+    <div class="input-form">
+      <form>
+        <div class="input-field">
+          <label class="input-field__label" for="zipcode">Please enter the ZIP code:</label>
+          <p class="error-msg error-msg--hidden">Error message goes here.</p>
+          <input class="input-field__text" type="text" id="zipcode" name="zipcode">
+        </div>
+        <div class="input-field">
+          <label class="input-field__label" for="userinput">How do you feel today:</label>
+          <textarea class="input-field__textarea" id="userinput" name="userinput"></textarea>
+        </div>
+        <div class="input-field__button-box">
+          <input type="button" onclick="formSubmit()" value="Submit" class="input-field__button">
+        </div>
+      </form>
+    </div>
+
+    <div class="journal">
+      <div class="container--column">
+        <div class="journal__header">
+          <h2>Journal</h2>
+        </div>
+        <div class="journal__table">
+          <table>
+            <thead>
+            <tr>
+              <th class="journal__header-date">Date</th>
+              <th class="journal__header-zipcode">ZIP Code</th>
+              <th class="journal__header-weather">Weather</th>
+              <th class="journal__header-notes">Notes</th>
+            </tr>
+            </thead>
+            <tbody id="journal-table-body">
+            <tr class="journal__odd-row">
+              <td>12/07/2021 14:02:34</td>
+              <td>99099</td>
+              <td>rain</td>
+              <td>It's a shame it;s raining.</td>
+            </tr>
+            <tr class="journal__even-row">
+              <td>12/07/2021 14:02:34</td>
+              <td>99099</td>
+              <td>rain</td>
+              <td>It's a shame it;s raining.</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
 
 </body>
 </html>
