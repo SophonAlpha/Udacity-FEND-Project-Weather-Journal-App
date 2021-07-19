@@ -109,7 +109,17 @@ body {
   text-align: left;
 }
 
+.journal__header-city {
+  min-width: 7em;
+  text-align: left;
+}
+
 .journal__header-weather {
+  min-width: 5em;
+  text-align: left;
+}
+
+.journal__header-temp {
   min-width: 5em;
   text-align: left;
 }
