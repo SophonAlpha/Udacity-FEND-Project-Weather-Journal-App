@@ -17,9 +17,7 @@ async function getWeather(zipCode, userInput) {
         try {
             const data = await response.json();
             if (data['cod'] === 200) {
-                console.log('Response received:')
                 postData(zipCode, data, userInput);
-                console.log(data);
             } else {
                 console.log('An error occurred when retrieving the response:')
                 showErrorMessage(data['message']);
@@ -40,7 +38,7 @@ function showErrorMessage(errorMessage) {
     elem.classList.remove('error-msg--hidden');
 }
 
-function postData(zipCode, data, userInput) {
+async function postData(zipCode, data, userInput) {
     const time = new Date();
     const timeStr =
         time.getFullYear() + '/' +
@@ -57,5 +55,21 @@ function postData(zipCode, data, userInput) {
         temp: Math.round(data.main.temp / 10) + '&deg;C',
         notes: userInput,
     };
-    console.log(postData);
+    console.log(JSON.stringify(postData));
+    const response = await fetch('/weather', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postData),
+    });
+    try {
+        const newData = await response.json();
+        console.log(newData);
+
+    } catch (error) {
+        console.log('Error while posting the data:');
+        console.log(error);
+    }
 }

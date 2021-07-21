@@ -15,9 +15,10 @@ app.use(cors());
 // Set path to static web content.
 app.use(express.static('website'));
 
-app.get('/all', function(req, res) {
-    console.log('Get request received.')
-    res.send('Get /all received.');
+app.post('/weather', function(req, res) {
+    console.log('Post request received.');
+    console.log(req.body);
+    res.send('ok');
 })
 
 // Set up and start our server.
