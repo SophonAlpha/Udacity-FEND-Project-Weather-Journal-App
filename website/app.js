@@ -55,7 +55,6 @@ async function postData(zipCode, data, userInput) {
         temp: Math.round(data.main.temp / 10) + '&deg;C',
         notes: userInput,
     };
-    console.log(JSON.stringify(postData));
     const response = await fetch('/weather', {
         method: 'POST',
         credentials: 'same-origin',
@@ -65,11 +64,46 @@ async function postData(zipCode, data, userInput) {
         body: JSON.stringify(postData),
     });
     try {
-        const newData = await response.json();
-        console.log(newData);
-
+        const newData = await response;
+        if (newData.status === 200) {
+            getData();
+        }
     } catch (error) {
         console.log('Error while posting the data:');
         console.log(error);
     }
 }
+
+async function getData() {
+    const response = await fetch('/weather');
+    try {
+        const data = await response.json();
+        displayData(data);
+    } catch (error) {
+        console.log('An error occurred when retrieving the weather data:')
+        console.log(error);
+    }
+}
+
+function displayData(data) {
+    const tableBody = document.getElementById('journal-table-body');
+    const tableDoc = document.createDocumentFragment();
+    let rowType = 'journal__odd-row';
+    for (let [index, item] of data.entries()) {
+        let row = document.createElement('tr');
+        rowType = (index % 2 === 1) ? 'journal__odd-row' : 'journal__even-row';
+        row.classList.add(rowType);
+        row.innerHTML = `
+            <td>${item['date']}</td>
+            <td>${item['zipcode']}</td>
+            <td>${item['city']}</td>
+            <td>${item['weather']}</td>
+            <td>${item['temp']}</td>
+            <td>${item['notes']}</td>
+            `;
+        tableDoc.appendChild(row);
+    }
+    tableBody.appendChild(tableDoc);
+}
+
+

@@ -1,5 +1,5 @@
 // Object to hold data in the server memory. Data not persisted to disk.
-projectData = {};
+projectData = [];
 
 // Import required packages.
 const express = require('express');
@@ -17,8 +17,13 @@ app.use(express.static('website'));
 
 app.post('/weather', function(req, res) {
     console.log('Post request received.');
-    console.log(req.body);
-    res.send('ok');
+    projectData.push(req.body);
+    res.send();
+})
+
+app.get('/weather', function(req, res) {
+    console.log('Get request received.');
+    res.send(projectData);
 })
 
 // Set up and start our server.
