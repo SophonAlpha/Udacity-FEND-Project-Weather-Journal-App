@@ -103,6 +103,7 @@ function displayData(data) {
             `;
         tableDoc.appendChild(row);
     }
+    tableBody.innerHTML = '';
     tableBody.appendChild(tableDoc);
 }
 
