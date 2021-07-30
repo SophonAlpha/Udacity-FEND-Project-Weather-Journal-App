@@ -2,6 +2,10 @@ const openWeatherBaseUrl = 'https://api.openweathermap.org/data/2.5/weather';
 const countryCode = 'us';
 const apiKey = '710ce5115e1bf7f0431571fdcd110447';
 
+function main() {
+    getData();
+}
+
 function formSubmit() {
     document.getElementById('error-message').classList.add('error-msg--hidden');
     getWeather(
@@ -107,4 +111,6 @@ function displayData(data) {
     tableBody.appendChild(tableDoc);
 }
 
+// It all starts here.
+document.addEventListener('DOMContentLoaded', main);
 
