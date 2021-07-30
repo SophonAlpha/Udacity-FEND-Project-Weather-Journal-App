@@ -49,16 +49,16 @@ Some sample data:
     <div class="input-form">
       <form>
         <div class="input-field">
-          <label class="input-field__label" for="zipcode">Please enter the ZIP code:</label>
+          <label class="input-field__label" for="zip">Please enter the ZIP code:</label>
           <p id="error-message" class="error-msg error-msg--hidden">Error message goes here.</p>
-          <input class="input-field__text" type="text" id="zipcode" name="zipcode">
+          <input class="input-field__text" type="text" id="zip" name="zipcode" placeholder="enter zip code here">
         </div>
         <div class="input-field">
-          <label class="input-field__label" for="userinput">How do you feel today:</label>
-          <textarea class="input-field__textarea" id="userinput" name="userinput"></textarea>
+          <label class="input-field__label" for="feelings">How do you feel today:</label>
+          <textarea class="input-field__textarea" id="feelings" name="feelings"></textarea>
         </div>
         <div class="input-field__button-box">
-          <input type="button" onclick="formSubmit()" value="Submit" class="input-field__button">
+          <input type="button" onclick="formSubmit()" value="Submit" class="input-field__button" id="generate">
         </div>
       </form>
     </div>

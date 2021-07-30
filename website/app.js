@@ -9,8 +9,8 @@ function main() {
 function formSubmit() {
     document.getElementById('error-message').classList.add('error-msg--hidden');
     getWeather(
-        document.getElementById('zipcode').value,
-        document.getElementById('userinput').value,
+        document.getElementById('zip').value,
+        document.getElementById('feelings').value,
     );
 }
 
