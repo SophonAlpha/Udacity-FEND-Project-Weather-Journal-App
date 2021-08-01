@@ -1,4 +1,4 @@
-const openWeatherBaseUrl = 'https://api.openweathermap.org/data/2.5/weather';
+const openWeatherBaseUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric';
 const countryCode = 'us';
 const apiKey = '710ce5115e1bf7f0431571fdcd110447';
 
@@ -15,7 +15,7 @@ function formSubmit() {
 }
 
 async function getWeather(zipCode, userInput) {
-    const url = openWeatherBaseUrl + '?zip=' + zipCode + ',' + countryCode + '&appid=' + apiKey;
+    const url = openWeatherBaseUrl + '&zip=' + zipCode + ',' + countryCode + '&appid=' + apiKey;
     try {
         const response = await fetch(url);
         try {
@@ -56,7 +56,7 @@ async function postData(zipCode, data, userInput) {
         zipcode: zipCode,
         city: data.name,
         weather: data.weather[0].main,
-        temp: Math.round(data.main.temp / 10) + '&deg;C',
+        temp: Math.round(data.main.temp) + '&deg;C',
         notes: userInput,
     };
     const response = await fetch('/weather', {
